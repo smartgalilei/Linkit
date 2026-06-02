@@ -2,7 +2,17 @@
 
 Linkit for Claude publishes a complete single-file HTML page as a temporary public preview link. Links expire after 3 days.
 
-This first Claude plugin is for Claude Chat and Cowork plugin use. It does not add Claude Code support.
+This first Claude plugin is for Claude Desktop Chat and Cowork plugin use. It does not add Claude Code support.
+
+Current scope:
+
+- complete single-file HTML only
+- remote MCP OAuth connection with a Linkit activation code
+- 10 successful publishes per user per UTC day
+- 3 MB maximum HTML size
+- links expire after 3 days
+- public temporary preview links with a Linkit badge
+- no local folder, bundle, `dist/`, or `build/` publishing from Claude
 
 ## 1. Get a Linkit activation code
 
@@ -47,4 +57,4 @@ In Claude, ask Linkit to publish a complete HTML page. Example:
 Use Linkit to publish this complete HTML page as a temporary preview URL.
 ```
 
-The current Claude plugin supports complete single-file HTML only. For local folders such as `dist/` or `build/`, use the Codex Plugin.
+For local folders such as `dist/` or `build/`, use the Codex Plugin.

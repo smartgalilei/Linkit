@@ -71,7 +71,18 @@ Linkit is also available in ChatGPT GPTs. Open ChatGPT GPTs, search for `Linkit`
 
 ### Claude Plugin
 
-Linkit also includes a Claude plugin package for Claude Chat and Cowork plugin use. It publishes complete single-file HTML pages through the Linkit remote MCP endpoint.
+Linkit also includes a Claude plugin package for Claude Desktop Chat and Cowork plugin use. It publishes complete single-file HTML pages through the Linkit remote MCP endpoint.
+
+Current Claude scope:
+
+- complete single-file HTML only
+- remote MCP OAuth connection with a Linkit activation code
+- 10 successful publishes per user per UTC day
+- 3 MB maximum HTML size
+- links expire after 3 days
+- public temporary preview links with a Linkit badge
+- no Claude Code support
+- no local folder, bundle, `dist/`, or `build/` publishing from Claude
 
 Install from Claude:
 
@@ -92,7 +103,7 @@ smartgalilei/Linkit
 
 See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the full Claude install guide.
 
-The Claude plugin currently supports complete single-file HTML only. It does not add Claude Code support.
+For local folders such as `dist/` or `build/`, use the Codex Plugin.
 
 ## Support
 

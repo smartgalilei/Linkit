@@ -13,6 +13,7 @@
       "source": "./plugins/linkit-claude",
       "description": "Publish complete single-file HTML pages as temporary Linkit preview links.",
       "version": "0.1.0",
+      "icon": "./plugins/linkit-claude/assets/Linkit_LOGO.png",
       "author": {
         "name": "Linkit",
         "email": "linkit@aidl.one"

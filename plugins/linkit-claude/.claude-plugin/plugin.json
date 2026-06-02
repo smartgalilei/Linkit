@@ -3,6 +3,7 @@
   "displayName": "Linkit",
   "version": "0.1.0",
   "description": "Publish complete single-file HTML pages as temporary Linkit preview links.",
+  "icon": "./assets/Linkit_LOGO.png",
   "author": {
     "name": "Linkit",
     "email": "linkit@aidl.one"
