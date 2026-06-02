@@ -15,6 +15,8 @@ Linkit is for temporary previews, not production hosting. Do not publish secrets
 
 ## Install In Codex App
 
+No separate install package is required. Codex installs Linkit from this public GitHub repository.
+
 1. Get a Linkit activation code:
    - Open `https://linkit.smartgeo.tokyo`
    - Click `Get access`

@@ -3,6 +3,8 @@
 Audience: users who have received a Linkit activation code.
 Goal: install Linkit in your own environment and publish your first shareable preview link.
 
+No separate install package is required. Codex installs Linkit from the public GitHub repository.
+
 ---
 
 ## 1. Get a Linkit activation code
