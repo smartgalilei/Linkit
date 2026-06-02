@@ -26,6 +26,7 @@ Linkit is for temporary previews, not production hosting. Do not publish secrets
 5. Click `Add more`.
 6. Add this repository as a repository marketplace source:
    - Repository URL: `https://github.com/smartgalilei/Linkit`
+   - Git reference: `main`
    - Marketplace path / sparse path: `.agents/plugins`
    - Source name, if asked: `Linkit Plugins`
 7. Save the source, then switch the source dropdown to `Linkit Plugins`.

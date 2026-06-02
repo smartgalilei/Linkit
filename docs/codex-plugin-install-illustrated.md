@@ -41,6 +41,7 @@ Main panel: Plugins
 3. Click `Add more`.
 4. Add a repository marketplace source with these values:
    - Repository URL: `https://github.com/smartgalilei/Linkit`
+   - Git reference: `main`
    - Marketplace path / sparse path: `.agents/plugins`
    - Source name, if asked: `Linkit Plugins`
 5. Save the source.
