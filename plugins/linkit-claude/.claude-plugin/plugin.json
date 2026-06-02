@@ -1,0 +1,14 @@
+{
+  "name": "linkit",
+  "displayName": "Linkit",
+  "version": "0.1.0",
+  "description": "Publish complete single-file HTML pages as temporary Linkit preview links.",
+  "author": {
+    "name": "Linkit",
+    "email": "linkit@aidl.one"
+  },
+  "homepage": "https://linkit.smartgeo.tokyo",
+  "repository": "https://github.com/smartgalilei/Linkit",
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json"
+}

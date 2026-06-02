@@ -1,6 +1,6 @@
-# Linkit Codex Plugin
+# Linkit Plugins
 
-Linkit turns Codex-built HTML pages and static demo folders into temporary public preview links.
+Linkit turns AI-built HTML pages and static demo folders into temporary public preview links.
 
 Homepage: https://linkit.smartgeo.tokyo
 
@@ -68,6 +68,33 @@ plugins/linkit/scripts/publish-dir.sh /path/to/dist
 ### Linkit GPT
 
 Linkit is also available in ChatGPT GPTs. Open ChatGPT GPTs, search for `Linkit`, then upload or provide a complete single-file HTML page. Linkit returns a temporary public preview URL that expires after 3 days.
+
+### Claude Plugin
+
+Linkit also includes a Claude plugin package for Claude Chat and Cowork plugin use. It publishes complete single-file HTML pages through the Linkit remote MCP endpoint.
+
+Install from Claude:
+
+1. Get a Linkit activation code from `https://linkit.smartgeo.tokyo`.
+2. Open Terminal and run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/smartgalilei/Linkit/main/plugins/linkit-claude/scripts/login.sh | bash -s -- <activation-code>
+```
+
+3. In Claude Desktop, open `Customize` -> `Plugins`.
+4. In `Personal plugins`, click `+`, then choose `Add marketplace`.
+5. Enter this GitHub repository:
+
+```text
+smartgalilei/Linkit
+```
+
+6. Click `Sync`, then install `Linkit`.
+
+See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the full Claude install guide.
+
+The Claude plugin currently supports complete single-file HTML only. It does not add Claude Code support.
 
 ## Support
 
