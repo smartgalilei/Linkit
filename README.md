@@ -85,7 +85,10 @@ smartgalilei/Linkit
 ```
 
 5. Click `Sync`, then install `Linkit`.
-6. When Claude asks you to connect Linkit, enter your activation code on the Linkit authorization page.
+6. Open the installed `Linkit` plugin.
+7. Open `Connectors` inside the plugin.
+8. Click `Connect`.
+9. When the browser opens the Linkit authorization page, enter your activation code.
 
 See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the full Claude install guide.
 
