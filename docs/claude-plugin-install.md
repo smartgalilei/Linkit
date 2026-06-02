@@ -11,17 +11,7 @@ This first Claude plugin is for Claude Chat and Cowork plugin use. It does not a
 3. Email Linkit from the address you want to use.
 4. Wait for your activation code.
 
-## 2. Activate Linkit on your computer
-
-Open Terminal, then run this command after replacing `<activation-code>` with the code you received:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/smartgalilei/Linkit/main/plugins/linkit-claude/scripts/login.sh | bash -s -- <activation-code>
-```
-
-The command stores your Linkit credential in `$HOME/.linkit/linkit.env`. On macOS it also tries to store the same credential in Keychain.
-
-## 3. Add the Linkit marketplace in Claude
+## 2. Add the Linkit marketplace in Claude
 
 1. Open Claude Desktop.
 2. Open `Customize`.
@@ -36,6 +26,12 @@ smartgalilei/Linkit
 
 7. Click `Sync`.
 8. Install `Linkit` when it appears.
+
+## 3. Connect Linkit
+
+When Claude asks you to connect or authorize Linkit, enter the activation code you received on the Linkit authorization page.
+
+You do not need to run a terminal activation command for the Claude plugin.
 
 ## 4. Use Linkit
 

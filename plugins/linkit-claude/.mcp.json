@@ -1,7 +1,6 @@
 {
   "linkit": {
     "type": "http",
-    "url": "https://linkit.smartgeo.tokyo/claude/mcp",
-    "headersHelper": "${CLAUDE_PLUGIN_ROOT}/scripts/linkit-headers.sh"
+    "url": "https://linkit.smartgeo.tokyo/claude/mcp"
   }
 }

@@ -2,5 +2,4 @@
 .env
 .env.local
 plugins/linkit/.env.local
-plugins/linkit-claude/.env.local
 node_modules

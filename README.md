@@ -76,21 +76,16 @@ Linkit also includes a Claude plugin package for Claude Chat and Cowork plugin u
 Install from Claude:
 
 1. Get a Linkit activation code from `https://linkit.smartgeo.tokyo`.
-2. Open Terminal and run:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/smartgalilei/Linkit/main/plugins/linkit-claude/scripts/login.sh | bash -s -- <activation-code>
-```
-
-3. In Claude Desktop, open `Customize` -> `Plugins`.
-4. In `Personal plugins`, click `+`, then choose `Add marketplace`.
-5. Enter this GitHub repository:
+2. In Claude Desktop, open `Customize` -> `Plugins`.
+3. In `Personal plugins`, click `+`, then choose `Add marketplace`.
+4. Enter this GitHub repository:
 
 ```text
 smartgalilei/Linkit
 ```
 
-6. Click `Sync`, then install `Linkit`.
+5. Click `Sync`, then install `Linkit`.
+6. When Claude asks you to connect Linkit, enter your activation code on the Linkit authorization page.
 
 See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the full Claude install guide.
 

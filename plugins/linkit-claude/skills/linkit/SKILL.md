@@ -14,8 +14,4 @@ Rules:
 - Do not publish secrets, credentials, private keys, or sensitive personal content.
 - Return the preview URL and expiry after publishing.
 
-If the Linkit MCP connector reports missing authentication, tell the user to request an activation code from `https://linkit.smartgeo.tokyo`, then run this in a terminal:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/smartgalilei/Linkit/main/plugins/linkit-claude/scripts/login.sh | bash -s -- <activation-code>
-```
+If the Linkit MCP connector reports missing authentication, tell the user to connect Linkit in Claude and enter their Linkit activation code on the Linkit authorization page.
