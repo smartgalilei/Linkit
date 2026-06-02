@@ -5,7 +5,16 @@ Goal: install Linkit in your own environment and publish your first shareable pr
 
 ---
 
-## 1. Add the Linkit marketplace in Codex App
+## 1. Get a Linkit activation code
+
+1. Open `https://linkit.smartgeo.tokyo`.
+2. Click `Get access`.
+3. Send the access request email.
+4. Wait for a Linkit activation code to be sent back to you.
+
+---
+
+## 2. Add the Linkit marketplace in Codex App
 
 ### UI sketch
 
@@ -41,7 +50,7 @@ Main panel: Plugins
 
 ---
 
-## 2. Run one-time activation
+## 3. Run one-time activation
 
 ### Option A: activation code login
 
@@ -71,7 +80,7 @@ export LINKIT_API_KEY='<api-key>'
 
 ---
 
-## 3. Start publishing from Codex
+## 4. Start publishing from Codex
 
 ### UI sketch
 

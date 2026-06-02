@@ -15,18 +15,23 @@ Linkit is for temporary previews, not production hosting. Do not publish secrets
 
 ## Install In Codex App
 
-1. Open Codex App.
-2. Click `Plugins` in the left sidebar.
-3. Open the plugin source dropdown. It usually shows `Built by OpenAI`.
-4. Click `Add more`.
-5. Add this repository as a repository marketplace source:
+1. Get a Linkit activation code:
+   - Open `https://linkit.smartgeo.tokyo`
+   - Click `Get access`
+   - Send the access request email
+   - Wait for a Linkit activation code to be sent back to you
+2. Open Codex App.
+3. Click `Plugins` in the left sidebar.
+4. Open the plugin source dropdown. It usually shows `Built by OpenAI`.
+5. Click `Add more`.
+6. Add this repository as a repository marketplace source:
    - Repository URL: `https://github.com/smartgalilei/Linkit`
    - Marketplace path / sparse path: `.agents/plugins`
    - Source name, if asked: `Linkit Plugins`
-6. Save the source, then switch the source dropdown to `Linkit Plugins`.
-7. Find `Linkit`, click `Install`, then click `Enable`.
-8. Open a terminal in the root folder of this repository. You are in the right folder when `ls plugins/linkit/scripts/login.sh` shows the login script.
-9. Run one-time activation:
+7. Save the source, then switch the source dropdown to `Linkit Plugins`.
+8. Find `Linkit`, click `Install`, then click `Enable`.
+9. Open a terminal in the root folder of this repository. You are in the right folder when `ls plugins/linkit/scripts/login.sh` shows the login script.
+10. Run one-time activation:
 
 ```bash
 plugins/linkit/scripts/login.sh <activation-code>
