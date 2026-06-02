@@ -16,17 +16,21 @@ Linkit is for temporary previews, not production hosting. Do not publish secrets
 ## Install In Codex App
 
 1. Open Codex App.
-2. Go to `Plugins`.
-3. Add this repository as a plugin marketplace source.
-4. Use sparse path `.agents/plugins` when Codex asks for the marketplace path.
-5. Install and enable `Linkit`.
-6. Run one-time activation:
+2. Click `Plugins` in the left sidebar.
+3. Open the plugin source dropdown. It usually shows `Built by OpenAI`.
+4. Click `Add more`.
+5. Add this repository as a repository marketplace source:
+   - Repository URL: `https://github.com/smartgalilei/Linkit`
+   - Marketplace path / sparse path: `.agents/plugins`
+   - Source name, if asked: `Linkit Plugins`
+6. Save the source, then switch the source dropdown to `Linkit Plugins`.
+7. Find `Linkit`, click `Install`, then click `Enable`.
+8. Open a terminal in the root folder of this repository. You are in the right folder when `ls plugins/linkit/scripts/login.sh` shows the login script.
+9. Run one-time activation:
 
 ```bash
 plugins/linkit/scripts/login.sh <activation-code>
 ```
-
-Activation stores your Linkit API key in macOS Keychain when available. On Windows, WSL, Linux, or other environments without macOS Keychain, Linkit stores the credential in `plugins/linkit/.env.local`.
 
 See [docs/codex-plugin-install-illustrated.md](docs/codex-plugin-install-illustrated.md) for the illustrated install guide.
 

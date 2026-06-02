@@ -28,10 +28,16 @@ Main panel: Plugins
 ### Steps
 
 1. Open Codex App and go to `Plugins`.
-2. Click `Import marketplace.json`.
-3. Select the `marketplace.json` file provided with Linkit.
-4. Find `Linkit` in the plugin list.
-5. Click `Install`, then `Enable`.
+2. Open the plugin source dropdown. It usually shows `Built by OpenAI`.
+3. Click `Add more`.
+4. Add a repository marketplace source with these values:
+   - Repository URL: `https://github.com/smartgalilei/Linkit`
+   - Marketplace path / sparse path: `.agents/plugins`
+   - Source name, if asked: `Linkit Plugins`
+5. Save the source.
+6. Switch the source dropdown to `Linkit Plugins`.
+7. Find `Linkit` in the plugin list.
+8. Click `Install`, then `Enable`.
 
 ---
 
@@ -39,42 +45,28 @@ Main panel: Plugins
 
 ### Option A: activation code login
 
+Open a terminal in the root folder of this repository. The root folder is the folder that contains `README.md` and the `plugins` folder.
+
+Check that you are in the right folder:
+
+```bash
+ls plugins/linkit/scripts/login.sh
+```
+
+Then run:
+
 ```bash
 plugins/linkit/scripts/login.sh <activation-code>
 ```
-
-After a successful activation, Linkit stores the credential for future use:
-
-- macOS: macOS Keychain service `linkit-api-key`
-- Windows, WSL, Linux, or other environments without the macOS `security` CLI: `plugins/linkit/.env.local`
 
 Activation codes are valid for 12 hours by default and can be used once.
 
 ### Option B: manual API key setup
 
-If you already have a Linkit API key on macOS, you can store it directly in Keychain:
-
-```bash
-security add-generic-password -a "$USER" -s linkit-api-key -w '<api-key>' -U
-```
-
-Or use an environment variable:
+If you already have a Linkit API key, you can use an environment variable:
 
 ```bash
 export LINKIT_API_KEY='<api-key>'
-```
-
-Or create `plugins/linkit/.env.local`:
-
-```bash
-export LINKIT_API_BASE_URL='https://linkit.smartgeo.tokyo'
-export LINKIT_API_KEY='<api-key>'
-```
-
-If you run the CLI or MCP server directly, also set:
-
-```bash
-export LINKIT_API_BASE_URL='https://linkit.smartgeo.tokyo'
 ```
 
 ---
