@@ -44,16 +44,40 @@ API_KEY="$(printf "%s" "$response_body" | node -e 'let s="";process.stdin.on("da
 PUBLISHER_ID="$(printf "%s" "$response_body" | node -e 'let s="";process.stdin.on("data",d=>s+=d);process.stdin.on("end",()=>{const j=JSON.parse(s);process.stdout.write(String(j.publisherId||"unknown"));});')"
 API_BASE_URL="$(printf "%s" "$response_body" | node -e 'let s="";process.stdin.on("data",d=>s+=d);process.stdin.on("end",()=>{const j=JSON.parse(s);process.stdout.write(String(j.apiBaseUrl||""));});')"
 
-if ! command -v security >/dev/null 2>&1; then
-  echo "Activation succeeded for ${PUBLISHER_ID}, but macOS Keychain CLI is unavailable." >&2
-  echo "Set this in your shell before using Linkit:" >&2
-  echo "export LINKIT_API_KEY='${API_KEY}'" >&2
+shell_quote() {
+  printf "'"
+  printf "%s" "$1" | sed "s/'/'\\\\''/g"
+  printf "'"
+}
+
+write_env_file() {
+  local resolved_base_url="${API_BASE_URL:-$LINKIT_API_BASE_URL}"
+  umask 077
+  {
+    echo "# Created by Linkit activation."
+    printf "export LINKIT_API_BASE_URL=%s\n" "$(shell_quote "$resolved_base_url")"
+    printf "export LINKIT_API_KEY=%s\n" "$(shell_quote "$API_KEY")"
+  } > "$ENV_FILE"
+  chmod 600 "$ENV_FILE" 2>/dev/null || true
+}
+
+if [[ "${LINKIT_DISABLE_KEYCHAIN:-}" == "1" ]] || ! command -v security >/dev/null 2>&1; then
+  write_env_file
+  echo "Linkit activation succeeded for ${PUBLISHER_ID}."
+  echo "Stored API key in plugin environment file: ${ENV_FILE}"
+  echo "Keep this file private. It is ignored by the Linkit git repository."
   exit 0
 fi
 
-security add-generic-password -a "$USER" -s linkit-api-key -w "$API_KEY" -U >/dev/null
-echo "Linkit activation succeeded for ${PUBLISHER_ID}."
-echo "Stored API key in macOS Keychain service: linkit-api-key"
+if security add-generic-password -a "$USER" -s linkit-api-key -w "$API_KEY" -U >/dev/null; then
+  echo "Linkit activation succeeded for ${PUBLISHER_ID}."
+  echo "Stored API key in macOS Keychain service: linkit-api-key"
+else
+  write_env_file
+  echo "Linkit activation succeeded for ${PUBLISHER_ID}."
+  echo "macOS Keychain write failed; stored API key in plugin environment file: ${ENV_FILE}"
+  echo "Keep this file private. It is ignored by the Linkit git repository."
+fi
 if [[ -n "$API_BASE_URL" ]]; then
   echo "API base URL: ${API_BASE_URL}"
 fi

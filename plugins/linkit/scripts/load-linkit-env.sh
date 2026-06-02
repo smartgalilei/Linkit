@@ -22,5 +22,6 @@ fi
 
 if [[ -z "${LINKIT_API_KEY:-}" ]]; then
   echo "LINKIT_API_KEY must be set in the environment, the Linkit plugin .env.local file, or macOS Keychain item 'linkit-api-key'." >&2
+  echo "Run plugins/linkit/scripts/login.sh <activation-code> to create the credential automatically." >&2
   exit 1
 fi

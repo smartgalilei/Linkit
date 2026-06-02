@@ -43,12 +43,16 @@ Main panel: Plugins
 plugins/linkit/scripts/login.sh <activation-code>
 ```
 
-After a successful activation, Linkit stores the credential in macOS Keychain as `linkit-api-key`.
+After a successful activation, Linkit stores the credential for future use:
+
+- macOS: macOS Keychain service `linkit-api-key`
+- Windows, WSL, Linux, or other environments without the macOS `security` CLI: `plugins/linkit/.env.local`
+
 Activation codes are valid for 12 hours by default and can be used once.
 
 ### Option B: manual API key setup
 
-If you already have a Linkit API key, you can store it directly in Keychain:
+If you already have a Linkit API key on macOS, you can store it directly in Keychain:
 
 ```bash
 security add-generic-password -a "$USER" -s linkit-api-key -w '<api-key>' -U
@@ -57,6 +61,13 @@ security add-generic-password -a "$USER" -s linkit-api-key -w '<api-key>' -U
 Or use an environment variable:
 
 ```bash
+export LINKIT_API_KEY='<api-key>'
+```
+
+Or create `plugins/linkit/.env.local`:
+
+```bash
+export LINKIT_API_BASE_URL='https://linkit.smartgeo.tokyo'
 export LINKIT_API_KEY='<api-key>'
 ```
 

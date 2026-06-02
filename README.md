@@ -26,7 +26,7 @@ Linkit is for temporary previews, not production hosting. Do not publish secrets
 plugins/linkit/scripts/login.sh <activation-code>
 ```
 
-Activation stores your Linkit API key in macOS Keychain as `linkit-api-key`.
+Activation stores your Linkit API key in macOS Keychain when available. On Windows, WSL, Linux, or other environments without macOS Keychain, Linkit stores the credential in `plugins/linkit/.env.local`.
 
 See [docs/codex-plugin-install-illustrated.md](docs/codex-plugin-install-illustrated.md) for the illustrated install guide.
 
