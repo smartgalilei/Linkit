@@ -2,6 +2,8 @@
 
 Linkit turns Codex-built HTML pages and static demo folders into temporary public preview links.
 
+Homepage: https://linkit.smartgeo.tokyo
+
 Current limits:
 
 - 10 successful publishes per user per UTC day
@@ -30,6 +32,8 @@ See [docs/codex-plugin-install-illustrated.md](docs/codex-plugin-install-illustr
 
 ## Use
 
+### Codex Plugin
+
 In Codex:
 
 ```text
@@ -49,9 +53,13 @@ plugins/linkit/scripts/publish-html.sh /path/to/file.html
 plugins/linkit/scripts/publish-dir.sh /path/to/dist
 ```
 
+### Linkit GPT
+
+Linkit is also available in ChatGPT GPTs. Open ChatGPT GPTs, search for `Linkit`, then upload or provide a complete single-file HTML page. Linkit returns a temporary public preview URL that expires after 3 days.
+
 ## Support
 
-- Service: https://linkit.smartgeo.tokyo
+- Homepage: https://linkit.smartgeo.tokyo
 - Privacy: https://linkit.smartgeo.tokyo/privacy
 - Terms: https://linkit.smartgeo.tokyo/terms
 - Support: https://linkit.smartgeo.tokyo/support
