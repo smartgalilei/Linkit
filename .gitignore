@@ -1,0 +1,5 @@
+.DS_Store
+.env
+.env.local
+plugins/linkit/.env.local
+node_modules

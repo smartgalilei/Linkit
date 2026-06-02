@@ -1,0 +1,45 @@
+{
+  "name": "linkit",
+  "version": "0.2.0",
+  "description": "Publish Codex-built HTML previews and static bundles as temporary Linkit links.",
+  "author": {
+    "name": "Smart",
+    "email": "2050service@gmail.com",
+    "url": "https://linkit.smartgeo.tokyo"
+  },
+  "homepage": "https://linkit.smartgeo.tokyo",
+  "repository": "https://linkit.smartgeo.tokyo",
+  "license": "UNLICENSED",
+  "keywords": [
+    "linkit",
+    "preview",
+    "html",
+    "cloudflare",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Linkit",
+    "shortDescription": "Share Codex-built pages as temporary links.",
+    "longDescription": "Linkit turns a single HTML page or static site bundle from Codex into a temporary public preview URL. Linkit is currently free. Links expire after 3 days and include a Linkit badge.",
+    "developerName": "Smart",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://linkit.smartgeo.tokyo",
+    "privacyPolicyURL": "https://linkit.smartgeo.tokyo/privacy",
+    "termsOfServiceURL": "https://linkit.smartgeo.tokyo/terms",
+    "defaultPrompt": [
+      "@Linkit publish this HTML as a temporary preview link.",
+      "Turn this generated landing page into a shareable Linkit URL.",
+      "Create a 3-day public preview link for this single-file HTML page.",
+      "Publish this dist folder as a temporary Linkit bundle preview."
+    ],
+    "brandColor": "#1D3557",
+    "composerIcon": "./assets/Linkit_LOGO.png",
+    "logo": "./assets/Linkit_LOGO.png"
+  }
+}
