@@ -1,71 +1,66 @@
-# Linkit 安装图示（Codex App / Codex CLI）
+# Linkit Install Guide for Codex App and Codex CLI
 
-适用对象：已收到 Linkit 激活码的用户。  
-目标：在自己的环境里完成安装，并发布第一个可分享链接。
+Audience: users who have received a Linkit activation code.
+Goal: install Linkit in your own environment and publish your first shareable preview link.
 
 ---
 
-## 1) Codex App：导入 marketplace 并安装 Linkit
+## 1. Add the Linkit marketplace in Codex App
 
-### 界面示意
+### UI sketch
 
 ```text
-┌──────────────────────────────────────────────────────────────┐
-│ Codex App                                                    │
-│                                                              │
-│  Left Sidebar                                                │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Chats                                                  │  │
-│  │ Plugins   ◀ 点这里                                     │  │
-│  │ Settings                                               │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  Main Panel: Plugins                                         │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Marketplace                                            │  │
-│  │ [ Import marketplace.json ]  ◀ 点这个按钮              │  │
-│  │                                                        │  │
-│  │ Linkit                                  [Install]      │  │
-│  │ Share Codex-built pages as temporary links             │  │
-│  └────────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────────┘
+Codex App
+
+Left sidebar
+  Chats
+  Plugins  <-- open this
+  Settings
+
+Main panel: Plugins
+  Marketplace
+  [ Import marketplace.json ]  <-- click this
+
+  Linkit                                  [Install]
+  Share Codex-built pages as temporary links
 ```
 
-### 操作步骤
+### Steps
 
-1. 打开 Codex App，进入 `Plugins`。
-2. 点击 `Import marketplace.json`。
-3. 选择我们提供的 `marketplace.json` 文件。
-4. 在插件列表里找到 `Linkit`，点击 `Install`，再 `Enable`。
+1. Open Codex App and go to `Plugins`.
+2. Click `Import marketplace.json`.
+3. Select the `marketplace.json` file provided with Linkit.
+4. Find `Linkit` in the plugin list.
+5. Click `Install`, then `Enable`.
 
 ---
 
-## 2) 运行一次激活（推荐）
+## 2. Run one-time activation
 
-### 方式 A：激活码登录（推荐）
-
-```bash
-plugins/linkit/scripts/login.sh 你的激活码
-```
-
-成功后会把可用凭据写入 macOS Keychain（`linkit-api-key`），后续不需要再手动填写 key。
-激活码默认 12 小时有效，且只能使用一次。
-
-### 方式 B：手动设置 API Key（兼容旧流程）
-
-如果你已经拿到了 API key，也可以直接写入 Keychain：
+### Option A: activation code login
 
 ```bash
-security add-generic-password -a "$USER" -s linkit-api-key -w '你的API_KEY' -U
+plugins/linkit/scripts/login.sh <activation-code>
 ```
 
-或使用环境变量：
+After a successful activation, Linkit stores the credential in macOS Keychain as `linkit-api-key`.
+Activation codes are valid for 12 hours by default and can be used once.
+
+### Option B: manual API key setup
+
+If you already have a Linkit API key, you can store it directly in Keychain:
 
 ```bash
-export LINKIT_API_KEY='你的API_KEY'
+security add-generic-password -a "$USER" -s linkit-api-key -w '<api-key>' -U
 ```
 
-如果用户是自己运行 CLI/MCP，也建议同时设置：
+Or use an environment variable:
+
+```bash
+export LINKIT_API_KEY='<api-key>'
+```
+
+If you run the CLI or MCP server directly, also set:
 
 ```bash
 export LINKIT_API_BASE_URL='https://linkit.smartgeo.tokyo'
@@ -73,25 +68,23 @@ export LINKIT_API_BASE_URL='https://linkit.smartgeo.tokyo'
 
 ---
 
-## 3) 在 Codex 里开始使用
+## 3. Start publishing from Codex
 
-### 界面示意
+### UI sketch
 
 ```text
-┌──────────────────────────────────────────────────────────────┐
-│ Chat                                                         │
-│                                                              │
-│ User: @Linkit publish this with Linkit                       │
-│                                                              │
-│ Assistant (tool result):                                     │
-│ {                                                            │
-│   "url": "https://linkit.smartgeo.tokyo/abc123def0",        │
-│   "expiresAt": "2026-05-29T12:34:56.000Z"                   │
-│ }                                                            │
-└──────────────────────────────────────────────────────────────┘
+Chat
+
+User: @Linkit publish this with Linkit
+
+Assistant tool result:
+{
+  "url": "https://linkit.smartgeo.tokyo/abc123def0",
+  "expiresAt": "2026-05-29T12:34:56.000Z"
+}
 ```
 
-### 首次建议输入
+### First prompts to try
 
 1. `@Linkit publish this with Linkit`
 2. `@Linkit publish /path/to/your/dist`
@@ -99,16 +92,16 @@ export LINKIT_API_BASE_URL='https://linkit.smartgeo.tokyo'
 
 ---
 
-## Codex CLI 用户（无 App 插件界面）
+## Codex CLI users
 
-CLI 用户不走 Plugins 界面，直接跑命令：
+If you do not use the Codex App plugin UI, run the helper scripts directly:
 
 ```bash
 plugins/linkit/scripts/publish-html.sh /path/to/file.html
 plugins/linkit/scripts/publish-dir.sh /path/to/dist
 ```
 
-或启动 MCP：
+Or start the MCP server:
 
 ```bash
 plugins/linkit/scripts/run-mcp.sh
@@ -116,10 +109,10 @@ plugins/linkit/scripts/run-mcp.sh
 
 ---
 
-## 常见卡点排查
+## Troubleshooting
 
-1. `401 unauthorized`：API Key 未配置、拼写错误、或 key 已失效。
-2. `429 daily publish limit reached`：当天 10 次配额已用完。
-3. 看不到 Linkit：导入的 `marketplace.json` 不是我们提供的版本，或插件未 `Enable`。
-4. 发布后打不开：确认返回 URL 是 `https://linkit.smartgeo.tokyo/...`，并检查是否已过期（3天）。
-5. 激活报错 `invalid activation code`：激活码填错、过期，或已被使用过一次。
+1. `401 unauthorized`: the API key is missing, mistyped, or expired.
+2. `429 daily publish limit reached`: the 10-successful-publishes-per-day quota has been used.
+3. Linkit is not visible: confirm the imported `marketplace.json` is the Linkit version and the plugin is enabled.
+4. The preview URL does not open: confirm the URL starts with `https://linkit.smartgeo.tokyo/` and has not expired.
+5. `invalid activation code`: the activation code is mistyped, expired, or already used.
