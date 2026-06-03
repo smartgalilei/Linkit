@@ -1,6 +1,6 @@
 # Linkit Claude Plugin Install
 
-Linkit for Claude publishes a complete single-file HTML page as a temporary public preview link. Links expire after 3 days.
+Linkit for Claude publishes a complete single-file HTML page as a public Linkit URL. Links expire after 3 days.
 
 This first Claude plugin is for Claude Desktop Chat and Cowork plugin use. It does not add Claude Code support.
 
@@ -11,13 +11,13 @@ Current scope:
 - 10 successful publishes per user per UTC day
 - 3 MB maximum HTML size
 - links expire after 3 days
-- public temporary preview links with a Linkit badge
+- public Linkit URLs with a Linkit badge
 - no local folder, bundle, `dist/`, or `build/` publishing from Claude
 
 ## 1. Get a Linkit activation code
 
 1. Open `https://linkit.smartgeo.tokyo`.
-2. Click `Get access`.
+2. Click `Get activation code`.
 3. Email Linkit from the address you want to use.
 4. Wait for your activation code.
 
@@ -54,7 +54,7 @@ You do not need to run a terminal activation command for the Claude plugin.
 In Claude, ask Linkit to publish a complete HTML page. Example:
 
 ```text
-Use Linkit to publish this complete HTML page as a temporary preview URL.
+Use Linkit to publish this complete HTML page.
 ```
 
 For local folders such as `dist/` or `build/`, use the Codex Plugin.

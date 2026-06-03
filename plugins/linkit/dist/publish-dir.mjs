@@ -131,8 +131,8 @@ function buildLiteBanner(omittedItems) {
   const extraCount = omittedItems.length > 4 ? omittedItems.length - 4 : 0;
   const summaryText = extraCount > 0 ? `${previewList}, plus ${extraCount} more` : previewList;
   return `
-<style id="linkit-lite-preview-style">
-  #linkit-lite-preview-banner {
+<style id="linkit-lite-page-style">
+  #linkit-lite-page-banner {
     position: fixed;
     top: 12px;
     right: 12px;
@@ -147,13 +147,13 @@ function buildLiteBanner(omittedItems) {
     font: 13px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     backdrop-filter: blur(10px);
   }
-  #linkit-lite-preview-banner strong {
+  #linkit-lite-page-banner strong {
     display: block;
     margin-bottom: 0.25rem;
     font-size: 13px;
     letter-spacing: 0.01em;
   }
-  #linkit-lite-preview-banner code {
+  #linkit-lite-page-banner code {
     display: block;
     margin-top: 0.35rem;
     white-space: normal;
@@ -178,9 +178,9 @@ function buildLiteBanner(omittedItems) {
     margin-bottom: 0.35rem;
   }
 </style>
-<div id="linkit-lite-preview-banner">
-  <strong>Lightweight Linkit preview</strong>
-  Some large media content was omitted to stay within the temporary preview limit.
+<div id="linkit-lite-page-banner">
+  <strong>Lightweight Linkit page</strong>
+  Some large media content was omitted to stay within the current size limit.
   Omitted ${omittedItems.length} items totaling ${formatBytes(totalOmittedBytes)}.
   <code>${summaryText}</code>
 </div>`;
@@ -239,7 +239,7 @@ function applyLiteBundleFallback(entries, maxBytes) {
   let usedBytes = coreEntries.reduce((sum, entry) => sum + entry.sizeBytes, 0) + reservedOverhead;
   if (usedBytes > maxBytes) {
     throw new Error(
-      `Core preview files total ${formatBytes(usedBytes - reservedOverhead)}, which still exceeds the ${formatBytes(maxBytes)} limit even without heavy media.`
+      `Core files total ${formatBytes(usedBytes - reservedOverhead)}, which still exceeds the ${formatBytes(maxBytes)} limit even without heavy media.`
     );
   }
   const selectedMedia = [];
@@ -448,11 +448,11 @@ Environment:
 
 Notes:
   Linkit currently requires a personal API key, supports bundles up to 10 MB,
-  limits publishing to 10 successful previews per UTC day, and creates
+  limits publishing to 10 successful pages per UTC day, and creates
   3-day links with a Linkit badge on hosted HTML pages.
   Linkit preserves the full original bundle whenever it fits within the limit.
   If the bundle exceeds the limit because of heavy media, Linkit automatically
-  publishes a lightweight preview that omits only the oversized media files.
+  publishes a lightweight page that omits only the oversized media files.
   --lite-if-needed is kept for backward compatibility and is no longer required.`);
 }
 async function main() {
@@ -491,11 +491,11 @@ async function main() {
     console.log(JSON.stringify(output, null, 2));
     return;
   }
-  console.log(`Temporary bundle preview link: ${output.url}`);
+  console.log(`Linkit URL: ${output.url}`);
   console.log(`Expires: ${output.expiresAt}`);
   if (output.mode === "lite") {
     console.log(
-      `Published a lightweight preview: ${output.publishedBytes} of ${output.originalBytes} bytes kept.`
+      `Published a lightweight page: ${output.publishedBytes} of ${output.originalBytes} bytes kept.`
     );
     console.log(`Omitted ${output.omittedFiles.length} heavy media files.`);
   }

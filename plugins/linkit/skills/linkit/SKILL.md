@@ -1,11 +1,11 @@
 ---
 name: linkit
-description: Publish Codex-built HTML files or static bundles as free temporary public preview links through Linkit. Use when the user wants to turn generated web output into a shareable URL or asks to publish a preview externally.
+description: Publish Codex-built HTML files or static bundles as public Linkit URLs. Use when the user wants to turn generated web output into a shareable URL.
 ---
 
 # Linkit
 
-Linkit is a Codex-first public preview workflow that is currently free. Each user activates once with a one-time code, then the plugin stores a personal API key locally. Previews expire after 3 days, allow up to 10 successful publishes per UTC day, accept bundles up to 10 MB, and include a small Linkit badge with a report link.
+Linkit is a Codex-first public link workflow that is currently free. Each user activates once with a one-time code, then the plugin stores a personal API key locally. Links expire after 3 days, allow up to 10 successful publishes per UTC day, accept bundles up to 10 MB, and include a small Linkit badge with a report link.
 
 Use `publish_auto` first when the user points at a local workspace path and you can publish directly from that path. It should be the default local Codex path because it decides between single-page and bundle mode before publishing.
 
@@ -15,18 +15,18 @@ For local-path publishing, do not `cat` a large HTML file into the terminal, do 
 
 If the user uploaded an HTML file, make sure you have the actual file contents before calling the tool. Do not invent a simplified placeholder page from the filename or a file summary.
 
-When publishing a single HTML file, preserve the original page content. Do not compress, simplify, minify, restyle, repair, summarize, or rewrite it unless the user explicitly asks for that transformation first. The hosted preview adds Linkit's required badge and report link.
+When publishing a single HTML file, preserve the original page content. Do not compress, simplify, minify, restyle, repair, summarize, or rewrite it unless the user explicitly asks for that transformation first. The hosted page adds Linkit's required badge and report link.
 
-If a single HTML file exceeds the size limit because it embeds heavy media, Linkit should still preserve the main page content, omit only the heavy embedded media needed to fit the limit, and clearly label the result as a lightweight preview.
+If a single HTML file exceeds the size limit because it embeds heavy media, Linkit should still preserve the main page content, omit only the heavy embedded media needed to fit the limit, and clearly label the result as a lightweight page.
 
-When publishing a bundle, preserve the provided files whenever they fit within the 10 MB limit. Do not flatten multiple files into one HTML page. If a local bundle exceeds the size budget because of heavy media, the local helper may omit only the heavy media files needed to fit and clearly label the result as a lightweight preview. Hosted HTML pages include Linkit's required badge and report link.
+When publishing a bundle, preserve the provided files whenever they fit within the 10 MB limit. Do not flatten multiple files into one HTML page. If a local bundle exceeds the size budget because of heavy media, the local helper may omit only the heavy media files needed to fit and clearly label the result as a lightweight page. Hosted HTML pages include Linkit's required badge and report link.
 
 ## When to use
 
-- The user has a complete HTML document or a static build output folder and wants a shareable external preview.
-- The user asks for a temporary link, preview URL, or expiring page.
+- The user has a complete HTML document or a static build output folder and wants a shareable external URL.
+- The user asks for a public link, Linkit URL, or expiring page.
 - The HTML was built in Codex or is available as a local file in the workspace.
-- The user says things like `@Linkit`, `publish this page`, `make this shareable`, or `give me a preview link`.
+- The user says things like `@Linkit`, `publish this page`, `make this shareable`, or `give me a Linkit URL`.
 
 ## Default local flow
 
@@ -36,7 +36,7 @@ When publishing a bundle, preserve the provided files whenever they fit within t
   - standalone HTML file with no local sibling dependencies -> page mode
   - HTML file with relative local assets or sibling page links -> bundle mode
   - directory path -> bundle mode
-- If the selected page or bundle is too large because of media files, Linkit should automatically publish a lightweight review build with an omission notice instead of rewriting the main content.
+- If the selected page or bundle is too large because of media files, Linkit should automatically publish a lightweight version with an omission notice instead of rewriting the main content.
 
 ## Tool contract
 
@@ -92,11 +92,11 @@ Call `publish_bundle` with:
 - Mention the expiration time briefly.
 - State that Linkit links expire after 3 days in the current free phase; custom TTL is not available.
 - Prefer a concise "here is your link" style over a long explanation.
-- Treat Linkit as temporary preview infrastructure, not permanent hosting.
+- Treat Linkit as temporary public link infrastructure, not permanent hosting.
 
 ## Guardrails
 
-- Only use Linkit for static preview publishing.
+- Only use Linkit for static page publishing.
 - Use only the user's personal Linkit API key; never share a key across users.
 - Do not try to bypass the 10-publishes-per-day or 10 MB bundle limits.
 - Do not use it for secrets, API keys, private keys, or other sensitive content.

@@ -1,7 +1,7 @@
 # Linkit Install Guide for Codex App and Codex CLI
 
 Audience: users who have received a Linkit activation code.
-Goal: install Linkit in your own environment and publish your first shareable preview link.
+Goal: install Linkit in your own environment and publish your first public Linkit URL.
 
 No separate install package is required. Codex installs Linkit from the public GitHub repository.
 
@@ -10,7 +10,7 @@ No separate install package is required. Codex installs Linkit from the public G
 ## 1. Get a Linkit activation code
 
 1. Open `https://linkit.smartgeo.tokyo`.
-2. Click `Get access`.
+2. Click `Get activation code`.
 3. Send the access request email.
 4. Wait for a Linkit activation code to be sent back to you.
 
@@ -33,7 +33,7 @@ Main panel: Plugins
   [ Import marketplace.json ]  <-- click this
 
   Linkit                                  [Install]
-  Share Codex-built pages as temporary links
+  Share Codex-built pages as public links
 ```
 
 ### Steps
@@ -103,7 +103,7 @@ Assistant tool result:
 
 1. `@Linkit publish this with Linkit`
 2. `@Linkit publish /path/to/your/dist`
-3. `@Linkit publish /path/to/index.html as a temporary preview`
+3. `@Linkit publish /path/to/index.html`
 
 ---
 
@@ -129,5 +129,5 @@ plugins/linkit/scripts/run-mcp.sh
 1. `401 unauthorized`: the API key is missing, mistyped, or expired.
 2. `429 daily publish limit reached`: the 10-successful-publishes-per-day quota has been used.
 3. Linkit is not visible: confirm the imported `marketplace.json` is the Linkit version and the plugin is enabled.
-4. The preview URL does not open: confirm the URL starts with `https://linkit.smartgeo.tokyo/` and has not expired.
+4. The Linkit URL does not open: confirm the URL starts with `https://linkit.smartgeo.tokyo/` and has not expired.
 5. `invalid activation code`: the activation code is mistyped, expired, or already used.

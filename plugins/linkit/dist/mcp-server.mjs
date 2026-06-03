@@ -21233,8 +21233,8 @@ function buildLiteBanner(omittedItems) {
   const extraCount = omittedItems.length > 4 ? omittedItems.length - 4 : 0;
   const summaryText = extraCount > 0 ? `${previewList}, plus ${extraCount} more` : previewList;
   return `
-<style id="linkit-lite-preview-style">
-  #linkit-lite-preview-banner {
+<style id="linkit-lite-page-style">
+  #linkit-lite-page-banner {
     position: fixed;
     top: 12px;
     right: 12px;
@@ -21249,13 +21249,13 @@ function buildLiteBanner(omittedItems) {
     font: 13px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     backdrop-filter: blur(10px);
   }
-  #linkit-lite-preview-banner strong {
+  #linkit-lite-page-banner strong {
     display: block;
     margin-bottom: 0.25rem;
     font-size: 13px;
     letter-spacing: 0.01em;
   }
-  #linkit-lite-preview-banner code {
+  #linkit-lite-page-banner code {
     display: block;
     margin-top: 0.35rem;
     white-space: normal;
@@ -21280,9 +21280,9 @@ function buildLiteBanner(omittedItems) {
     margin-bottom: 0.35rem;
   }
 </style>
-<div id="linkit-lite-preview-banner">
-  <strong>Lightweight Linkit preview</strong>
-  Some large media content was omitted to stay within the temporary preview limit.
+<div id="linkit-lite-page-banner">
+  <strong>Lightweight Linkit page</strong>
+  Some large media content was omitted to stay within the current size limit.
   Omitted ${omittedItems.length} items totaling ${formatBytes(totalOmittedBytes)}.
   <code>${summaryText}</code>
 </div>`;
@@ -21341,7 +21341,7 @@ function applyLiteBundleFallback(entries, maxBytes) {
   let usedBytes = coreEntries.reduce((sum, entry) => sum + entry.sizeBytes, 0) + reservedOverhead;
   if (usedBytes > maxBytes) {
     throw new Error(
-      `Core preview files total ${formatBytes(usedBytes - reservedOverhead)}, which still exceeds the ${formatBytes(maxBytes)} limit even without heavy media.`
+      `Core files total ${formatBytes(usedBytes - reservedOverhead)}, which still exceeds the ${formatBytes(maxBytes)} limit even without heavy media.`
     );
   }
   const selectedMedia = [];
@@ -21585,7 +21585,7 @@ async function main() {
     "publish_page",
     {
       title: "Publish temporary Linkit page",
-      description: "Publish a single HTML file to Linkit and get a 3-day temporary public URL with a Linkit badge and report link. Linkit is currently free and allows up to 10 successful publishes per UTC day with a 10 MB bundle limit. Only use this when you have the full original HTML document, not a filename or attachment summary. For a local file path, prefer publish_auto instead of reading the whole file into chat first. Preserve the user's HTML exactly as provided whenever it fits within the limit. If the original HTML exceeds the limit because it embeds heavy media, Linkit will keep the main content, omit heavy embedded media, and clearly label the result as a lightweight preview. Do not compress, simplify, minify, restyle, repair, summarize, or rewrite the page for any other reason.",
+      description: "Publish a single HTML file to Linkit and get a 3-day public URL with a Linkit badge and report link. Linkit is currently free and allows up to 10 successful publishes per UTC day with a 10 MB bundle limit. Only use this when you have the full original HTML document, not a filename or attachment summary. For a local file path, prefer publish_auto instead of reading the whole file into chat first. Preserve the user's HTML exactly as provided whenever it fits within the limit. If the original HTML exceeds the limit because it embeds heavy media, Linkit will keep the main content, omit heavy embedded media, and clearly label the result as a lightweight page. Do not compress, simplify, minify, restyle, repair, summarize, or rewrite the page for any other reason.",
       inputSchema: {
         html: external_exports.string().min(1).describe("The full HTML document to publish"),
         title: external_exports.string().max(120).optional().describe("Optional title stored in page metadata")
@@ -21626,7 +21626,7 @@ async function main() {
     "publish_bundle",
     {
       title: "Publish temporary Linkit bundle",
-      description: "Publish a multi-file static site bundle to Linkit and get a 3-day temporary public URL with a Linkit badge and report link. Linkit is currently free and accepts up to 10 MB and 10 successful publishes per UTC day. For a local directory path, prefer publish_auto instead of printing file contents or base64 into the conversation first. Preserve the provided files as-is whenever they fit within the limit. If the bundle exceeds the limit because of heavy media, Linkit will keep the main site files, omit heavy media assets, and clearly label the result as a lightweight preview. Do not flatten, rewrite, optimize, or omit files for any other reason. Use this for build output folders with HTML, CSS, JS, and static assets. Provide normalized relative file paths, the entry HTML path, and base64 file contents.",
+      description: "Publish a multi-file static site bundle to Linkit and get a 3-day public URL with a Linkit badge and report link. Linkit is currently free and accepts up to 10 MB and 10 successful publishes per UTC day. For a local directory path, prefer publish_auto instead of printing file contents or base64 into the conversation first. Preserve the provided files as-is whenever they fit within the limit. If the bundle exceeds the limit because of heavy media, Linkit will keep the main site files, omit heavy media assets, and clearly label the result as a lightweight page. Do not flatten, rewrite, optimize, or omit files for any other reason. Use this for build output folders with HTML, CSS, JS, and static assets. Provide normalized relative file paths, the entry HTML path, and base64 file contents.",
       inputSchema: {
         entryPath: external_exports.string().min(1).describe("Relative HTML entry path inside the bundle, such as index.html"),
         files: external_exports.array(
@@ -21678,7 +21678,7 @@ async function main() {
     "publish_auto",
     {
       title: "Automatically publish a local HTML file or bundle",
-      description: "Publish a local workspace HTML file or directory to Linkit and automatically choose between single-page and bundle mode. The resulting public link lasts 3 days and hosted HTML includes a Linkit badge and report link. Linkit is currently free and accepts up to 10 MB and 10 successful publishes per UTC day. Use this as the default when the user points at a local path because it avoids echoing large HTML or base64 payloads into the conversation. Preserve the original HTML and files exactly as they exist on disk whenever they fit within the limit. HTML files with sibling-page links or local asset references are treated as bundles. Directories publish as bundles. If the content exceeds the limit because of heavy media, Linkit will keep the main content, omit heavy media, and clearly label the result as a lightweight preview. Do not rewrite or optimize content for any other reason.",
+      description: "Publish a local workspace HTML file or directory to Linkit and automatically choose between single-page and bundle mode. The resulting public link lasts 3 days and hosted HTML includes a Linkit badge and report link. Linkit is currently free and accepts up to 10 MB and 10 successful publishes per UTC day. Use this as the default when the user points at a local path because it avoids echoing large HTML or base64 payloads into the conversation. Preserve the original HTML and files exactly as they exist on disk whenever they fit within the limit. HTML files with sibling-page links or local asset references are treated as bundles. Directories publish as bundles. If the content exceeds the limit because of heavy media, Linkit will keep the main content, omit heavy media, and clearly label the result as a lightweight page. Do not rewrite or optimize content for any other reason.",
       inputSchema: {
         path: external_exports.string().min(1).describe("Local workspace HTML file path or directory path"),
         entryPath: external_exports.string().min(1).optional().describe("Optional bundle entry path override; defaults to index.html for directories"),

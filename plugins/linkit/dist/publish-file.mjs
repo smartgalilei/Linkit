@@ -194,7 +194,7 @@ async function main() {
     console.log(JSON.stringify(output, null, 2));
     return;
   }
-  console.log(`Temporary preview link: ${output.url}`);
+  console.log(`Linkit URL: ${output.url}`);
   console.log(`Expires: ${output.expiresAt}`);
 }
 main().catch((error) => {

@@ -1,25 +1,38 @@
-# Linkit Plugins
+# Linkit
 
-Linkit turns AI-built HTML pages and static demo folders into temporary public preview links.
+AI creates the page. Linkit shares it.
+
+Linkit turns AI-built HTML pages and static demo folders into public links without setting up hosting, deployment, or GitHub Pages.
 
 Homepage: https://linkit.smartgeo.tokyo
 
-Current limits:
+## Current Access
 
-- 10 successful publishes per user per UTC day
-- static bundles up to 10 MB
-- links expire after 3 days
-- hosted HTML previews include a Linkit badge and report link
+Linkit is currently free during this phase.
 
-Linkit is for temporary previews, not production hosting. Do not publish secrets, credentials, private keys, payment card data, sensitive personal data, malware, phishing content, or unlawful content.
+- Codex and Claude require a Linkit activation code.
+- To get an activation code, open https://linkit.smartgeo.tokyo, click `Get activation code`, send the access request email, and wait for the code.
+- The searchable Linkit GPT in ChatGPT GPTs does not require a separate activation code.
 
-## Install In Codex App
+Do not publish secrets, credentials, private keys, payment card data, sensitive personal data, malware, phishing content, or unlawful content. Linkit creates public links and is not production hosting.
+
+## What Linkit Supports
+
+| Tool | Best for | Access | Current limits |
+| --- | --- | --- | --- |
+| Codex | Local HTML files, `dist/`, `build/`, and static exports | Activation code | 10 publishes/day, 10 MB bundle, 3-day links |
+| Claude | Complete single-file HTML in Claude Desktop Chat or Cowork | Activation code through the connector auth page | 10 publishes/day, 3 MB HTML, 3-day links |
+| GPTs | Complete single-file HTML in ChatGPT | Search for `Linkit` in GPTs | 3 MB HTML, 3-day links, shared global quota |
+
+Claude Code, Gemini CLI, and ChatGPT App Directory distribution are not included in this repository.
+
+## Install In Codex
 
 No separate install package is required. Codex installs Linkit from this public GitHub repository.
 
 1. Get a Linkit activation code:
    - Open `https://linkit.smartgeo.tokyo`
-   - Click `Get access`
+   - Click `Get activation code`
    - Send the access request email
    - Wait for a Linkit activation code to be sent back to you
 2. Open Codex App.
@@ -40,21 +53,10 @@ No separate install package is required. Codex installs Linkit from this public 
 plugins/linkit/scripts/login.sh <activation-code>
 ```
 
-See [docs/codex-plugin-install-illustrated.md](docs/codex-plugin-install-illustrated.md) for the illustrated install guide.
-
-## Use
-
-### Codex Plugin
-
-In Codex:
+Use Linkit from Codex:
 
 ```text
-@Linkit publish this HTML as a temporary preview link
-```
-
-For a local build output:
-
-```text
+@Linkit publish this HTML
 @Linkit publish /path/to/dist
 ```
 
@@ -65,26 +67,9 @@ plugins/linkit/scripts/publish-html.sh /path/to/file.html
 plugins/linkit/scripts/publish-dir.sh /path/to/dist
 ```
 
-### Linkit GPT
+See [docs/codex-plugin-install-illustrated.md](docs/codex-plugin-install-illustrated.md) for the detailed Codex guide.
 
-Linkit is also available in ChatGPT GPTs. Open ChatGPT GPTs, search for `Linkit`, then upload or provide a complete single-file HTML page. Linkit returns a temporary public preview URL that expires after 3 days.
-
-### Claude Plugin
-
-Linkit also includes a Claude plugin package for Claude Desktop Chat and Cowork plugin use. It publishes complete single-file HTML pages through the Linkit remote MCP endpoint.
-
-Current Claude scope:
-
-- complete single-file HTML only
-- remote MCP OAuth connection with a Linkit activation code
-- 10 successful publishes per user per UTC day
-- 3 MB maximum HTML size
-- links expire after 3 days
-- public temporary preview links with a Linkit badge
-- no Claude Code support
-- no local folder, bundle, `dist/`, or `build/` publishing from Claude
-
-Install from Claude:
+## Install In Claude
 
 1. Get a Linkit activation code from `https://linkit.smartgeo.tokyo`.
 2. In Claude Desktop, open `Customize` -> `Plugins`.
@@ -101,9 +86,23 @@ smartgalilei/Linkit
 8. Click `Connect`.
 9. When the browser opens the Linkit authorization page, enter your activation code.
 
-See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the full Claude install guide.
+Use Linkit from Claude:
 
-For local folders such as `dist/` or `build/`, use the Codex Plugin.
+```text
+Use Linkit to publish this complete HTML page.
+```
+
+The Claude plugin supports complete single-file HTML only. For local folders such as `dist/` or `build/`, use the Codex Plugin.
+
+See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the detailed Claude guide.
+
+## Use Linkit GPT
+
+1. Open ChatGPT GPTs.
+2. Search for `Linkit`.
+3. Open the Linkit GPT.
+4. Upload or provide a complete single-file HTML page.
+5. Ask Linkit to publish it and return the Linkit URL.
 
 ## Support
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "linkit-plugins",
-  "description": "Linkit plugins for publishing temporary preview links.",
+  "description": "Linkit plugins for publishing AI-built HTML pages as public links.",
   "owner": {
     "name": "Linkit",
     "email": "linkit@aidl.one"
@@ -11,7 +11,7 @@
       "name": "linkit",
       "displayName": "Linkit",
       "source": "./plugins/linkit-claude",
-      "description": "Publish complete single-file HTML pages as temporary Linkit preview links.",
+      "description": "Publish complete single-file HTML pages as public Linkit URLs.",
       "version": "0.1.0",
       "icon": "./plugins/linkit-claude/assets/Linkit_LOGO.png",
       "author": {
@@ -21,7 +21,7 @@
       "homepage": "https://linkit.smartgeo.tokyo",
       "repository": "https://github.com/smartgalilei/Linkit",
       "category": "productivity",
-      "tags": ["html", "preview", "publishing"]
+      "tags": ["html", "publishing", "share"]
     }
   ]
 }
