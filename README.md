@@ -10,6 +10,7 @@ Homepage: https://linkit.aidl.one
 
 Linkit is currently free during this phase.
 
+- The Linkit homepage supports an anonymous upload when no AI tool is available: one `.html` file up to 3 MB, or one `.zip` bundle up to 10 MB with root `index.html`. The result includes a management link for early removal.
 - Codex and Claude require a Linkit activation code.
 - To get an activation code, open https://linkit.aidl.one, click `Get activation code`, send the access request email, and wait for the code.
 - The searchable Linkit GPT in ChatGPT GPTs does not require a separate activation code.
@@ -20,6 +21,7 @@ Do not publish secrets, credentials, private keys, payment card data, sensitive 
 
 | Tool | Best for | Access | Current limits |
 | --- | --- | --- | --- |
+| Linkit website | One HTML file or ZIP static bundle without an AI tool | Open [linkit.aidl.one](https://linkit.aidl.one) | 3 MB HTML, 10 MB ZIP bundle, 3-day links, shared daily capacity |
 | Codex in ChatGPT Desktop | Local HTML files, `dist/`, `build/`, and static exports | Activation code | 10 publishes/day, 10 MB bundle, 3-day links |
 | Claude | Complete single-file HTML in Claude Desktop Chat, Cowork, and Code, plus Claude Web through the connected account | Activation code through the connector auth page | 10 publishes/day, 3 MB HTML, 3-day links |
 | GPTs | Complete single-file HTML in ChatGPT | Search for `Linkit` in GPTs | 3 MB HTML, 3-day links, shared global quota |
