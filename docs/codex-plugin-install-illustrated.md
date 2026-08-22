@@ -1,4 +1,4 @@
-# Linkit Install Guide for Codex App and Codex CLI
+# Linkit Install Guide for ChatGPT Desktop Codex
 
 Audience: users who have received a Linkit activation code.
 Goal: install Linkit in your own environment and publish your first public Linkit URL.
@@ -16,12 +16,12 @@ No separate install package is required. Codex installs Linkit from the public G
 
 ---
 
-## 2. Add the Linkit marketplace in Codex App
+## 2. Add the Linkit marketplace in ChatGPT Desktop
 
 ### UI sketch
 
 ```text
-Codex App
+ChatGPT Desktop - Codex
 
 Left sidebar
   Chats
@@ -38,7 +38,7 @@ Main panel: Plugins
 
 ### Steps
 
-1. Open Codex App and go to `Plugins`.
+1. Open ChatGPT Desktop, switch to `Codex`, and go to `Plugins`.
 2. Open the plugin source dropdown. It usually shows `Built by OpenAI`.
 3. Click `Add more`.
 4. Add a repository marketplace source with these values:
@@ -55,8 +55,6 @@ Main panel: Plugins
 
 ## 3. Run one-time activation
 
-### Option A: activation code login
-
 Open a terminal in the root folder of this repository. The root folder is the folder that contains `README.md` and the `plugins` folder.
 
 Check that you are in the right folder:
@@ -72,14 +70,6 @@ plugins/linkit/scripts/login.sh <activation-code>
 ```
 
 Activation codes are valid for 12 hours by default and can be used once.
-
-### Option B: manual API key setup
-
-If you already have a Linkit API key, you can use an environment variable:
-
-```bash
-export LINKIT_API_KEY='<api-key>'
-```
 
 ---
 
@@ -107,9 +97,9 @@ Assistant tool result:
 
 ---
 
-## Codex CLI users
+## Terminal helpers
 
-If you do not use the Codex App plugin UI, run the helper scripts directly:
+The installed repository also includes terminal helpers:
 
 ```bash
 plugins/linkit/scripts/publish-html.sh /path/to/file.html

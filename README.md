@@ -20,11 +20,11 @@ Do not publish secrets, credentials, private keys, payment card data, sensitive 
 
 | Tool | Best for | Access | Current limits |
 | --- | --- | --- | --- |
-| Codex | Local HTML files, `dist/`, `build/`, and static exports | Activation code | 10 publishes/day, 10 MB bundle, 3-day links |
-| Claude | Complete single-file HTML in Claude Desktop Chat or Cowork | Activation code through the connector auth page | 10 publishes/day, 3 MB HTML, 3-day links |
+| Codex in ChatGPT Desktop | Local HTML files, `dist/`, `build/`, and static exports | Activation code | 10 publishes/day, 10 MB bundle, 3-day links |
+| Claude | Complete single-file HTML in Claude Desktop Chat, Cowork, and Code, plus Claude Web through the connected account | Activation code through the connector auth page | 10 publishes/day, 3 MB HTML, 3-day links |
 | GPTs | Complete single-file HTML in ChatGPT | Search for `Linkit` in GPTs | 3 MB HTML, 3-day links, shared global quota |
 
-Claude Code, Gemini CLI, and ChatGPT App Directory distribution are not included in this repository.
+Linkit is not yet listed in the official OpenAI Plugin Directory or Anthropic marketplace. Standalone terminal Claude Code CLI installation and Gemini CLI are not currently supported claims.
 
 ## Install In Codex
 
@@ -35,7 +35,7 @@ No separate install package is required. Codex installs Linkit from this public 
    - Click `Get activation code`
    - Send the access request email
    - Wait for a Linkit activation code to be sent back to you
-2. Open Codex App.
+2. Open ChatGPT Desktop and switch to `Codex`.
 3. Click `Plugins` in the left sidebar.
 4. Open the plugin source dropdown. It usually shows `Built by OpenAI`.
 5. Click `Add more`.
@@ -92,7 +92,7 @@ Use Linkit from Claude:
 Use Linkit to publish this complete HTML page.
 ```
 
-The Claude plugin supports complete single-file HTML only. For local folders such as `dist/` or `build/`, use the Codex Plugin.
+The Claude plugin supports complete single-file HTML only. It has been observed working in Claude Desktop Chat, Cowork, and Code. The connected remote connector is also designed for Claude Web on the same account. For local folders such as `dist/` or `build/`, use the Codex Plugin in ChatGPT Desktop.
 
 See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the detailed Claude guide.
 

@@ -2,7 +2,7 @@
 
 Linkit for Claude publishes a complete single-file HTML page as a public Linkit URL. Links expire after 3 days.
 
-This first Claude plugin is for Claude Desktop Chat and Cowork plugin use. It does not add Claude Code support.
+The remote Linkit connector has been observed working in Claude Desktop Chat, Cowork, and Code. It is also designed to be available in Claude Web when the same Claude account has the connector enabled. Standalone terminal Claude Code CLI installation is not currently a supported claim.
 
 Current scope:
 
