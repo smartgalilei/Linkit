@@ -53,7 +53,7 @@ The tool returns:
 
 ```json
 {
-  "url": "https://linkit.smartgeo.tokyo/abc123def0",
+  "url": "https://linkit.aidl.one/abc123def0",
   "expiresAt": "2026-05-23T12:00:00.000Z"
 }
 ```

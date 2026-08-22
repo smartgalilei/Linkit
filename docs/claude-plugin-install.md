@@ -16,7 +16,7 @@ Current scope:
 
 ## 1. Get a Linkit activation code
 
-1. Open `https://linkit.smartgeo.tokyo`.
+1. Open `https://linkit.aidl.one`.
 2. Click `Get activation code`.
 3. Email Linkit from the address you want to use.
 4. Wait for your activation code.

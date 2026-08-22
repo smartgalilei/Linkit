@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PLUGIN_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 ENV_FILE="$PLUGIN_ROOT/.env.local"
 
-LINKIT_API_BASE_URL="${LINKIT_API_BASE_URL:-https://linkit.smartgeo.tokyo}"
+LINKIT_API_BASE_URL="${LINKIT_API_BASE_URL:-https://linkit.aidl.one}"
 
 if [[ -f "$ENV_FILE" ]]; then
   # shellcheck disable=SC1090

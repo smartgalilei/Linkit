@@ -4,14 +4,14 @@ AI creates the page. Linkit shares it.
 
 Linkit turns AI-built HTML pages and static demo folders into public links without setting up hosting, deployment, or GitHub Pages.
 
-Homepage: https://linkit.smartgeo.tokyo
+Homepage: https://linkit.aidl.one
 
 ## Current Access
 
 Linkit is currently free during this phase.
 
 - Codex and Claude require a Linkit activation code.
-- To get an activation code, open https://linkit.smartgeo.tokyo, click `Get activation code`, send the access request email, and wait for the code.
+- To get an activation code, open https://linkit.aidl.one, click `Get activation code`, send the access request email, and wait for the code.
 - The searchable Linkit GPT in ChatGPT GPTs does not require a separate activation code.
 
 Do not publish secrets, credentials, private keys, payment card data, sensitive personal data, malware, phishing content, or unlawful content. Linkit creates public links and is not production hosting.
@@ -31,7 +31,7 @@ Linkit is not yet listed in the official OpenAI Plugin Directory or Anthropic ma
 No separate install package is required. Codex installs Linkit from this public GitHub repository.
 
 1. Get a Linkit activation code:
-   - Open `https://linkit.smartgeo.tokyo`
+   - Open `https://linkit.aidl.one`
    - Click `Get activation code`
    - Send the access request email
    - Wait for a Linkit activation code to be sent back to you
@@ -71,7 +71,7 @@ See [docs/codex-plugin-install-illustrated.md](docs/codex-plugin-install-illustr
 
 ## Install In Claude
 
-1. Get a Linkit activation code from `https://linkit.smartgeo.tokyo`.
+1. Get a Linkit activation code from `https://linkit.aidl.one`.
 2. In Claude Desktop, open `Customize` -> `Plugins`.
 3. In `Personal plugins`, click `+`, then choose `Add marketplace`.
 4. Enter this GitHub repository:
@@ -106,10 +106,10 @@ See [docs/claude-plugin-install.md](docs/claude-plugin-install.md) for the detai
 
 ## Support
 
-- Homepage: https://linkit.smartgeo.tokyo
-- Privacy: https://linkit.smartgeo.tokyo/privacy
-- Terms: https://linkit.smartgeo.tokyo/terms
-- Support: https://linkit.smartgeo.tokyo/support
+- Homepage: https://linkit.aidl.one
+- Privacy: https://linkit.aidl.one/privacy
+- Terms: https://linkit.aidl.one/terms
+- Support: https://linkit.aidl.one/support
 
 ## License
 

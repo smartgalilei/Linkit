@@ -9,7 +9,7 @@ No separate install package is required. Codex installs Linkit from the public G
 
 ## 1. Get a Linkit activation code
 
-1. Open `https://linkit.smartgeo.tokyo`.
+1. Open `https://linkit.aidl.one`.
 2. Click `Get activation code`.
 3. Send the access request email.
 4. Wait for a Linkit activation code to be sent back to you.
@@ -84,7 +84,7 @@ User: @Linkit publish this with Linkit
 
 Assistant tool result:
 {
-  "url": "https://linkit.smartgeo.tokyo/abc123def0",
+  "url": "https://linkit.aidl.one/abc123def0",
   "expiresAt": "2026-05-29T12:34:56.000Z"
 }
 ```
@@ -119,5 +119,5 @@ plugins/linkit/scripts/run-mcp.sh
 1. `401 unauthorized`: the API key is missing, mistyped, or expired.
 2. `429 daily publish limit reached`: the 10-successful-publishes-per-day quota has been used.
 3. Linkit is not visible: confirm the imported `marketplace.json` is the Linkit version and the plugin is enabled.
-4. The Linkit URL does not open: confirm the URL starts with `https://linkit.smartgeo.tokyo/` and has not expired.
+4. The Linkit URL does not open: confirm the URL starts with `https://linkit.aidl.one/` and has not expired.
 5. `invalid activation code`: the activation code is mistyped, expired, or already used.

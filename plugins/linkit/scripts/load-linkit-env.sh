@@ -6,7 +6,7 @@ PLUGIN_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 ENV_FILE="$PLUGIN_ROOT/.env.local"
 
 export LINKIT_PLUGIN_ROOT="$PLUGIN_ROOT"
-export LINKIT_API_BASE_URL="${LINKIT_API_BASE_URL:-https://linkit.smartgeo.tokyo}"
+export LINKIT_API_BASE_URL="${LINKIT_API_BASE_URL:-https://linkit.aidl.one}"
 
 if [[ -f "$ENV_FILE" ]]; then
   set -a
