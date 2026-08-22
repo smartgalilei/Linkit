@@ -5,10 +5,10 @@
   "author": {
     "name": "Smart",
     "email": "linkit@aidl.one",
-    "url": "https://linkit.smartgeo.tokyo"
+    "url": "https://linkit.aidl.one"
   },
-  "homepage": "https://linkit.smartgeo.tokyo",
-  "repository": "https://linkit.smartgeo.tokyo",
+  "homepage": "https://linkit.aidl.one",
+  "repository": "https://linkit.aidl.one",
   "license": "UNLICENSED",
   "keywords": [
     "linkit",
@@ -29,9 +29,9 @@
       "Interactive",
       "Write"
     ],
-    "websiteURL": "https://linkit.smartgeo.tokyo",
-    "privacyPolicyURL": "https://linkit.smartgeo.tokyo/privacy",
-    "termsOfServiceURL": "https://linkit.smartgeo.tokyo/terms",
+    "websiteURL": "https://linkit.aidl.one",
+    "privacyPolicyURL": "https://linkit.aidl.one/privacy",
+    "termsOfServiceURL": "https://linkit.aidl.one/terms",
     "defaultPrompt": [
       "@Linkit publish this HTML.",
       "Turn this generated landing page into a shareable Linkit URL.",

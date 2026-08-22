@@ -8,7 +8,7 @@
     "name": "Linkit",
     "email": "linkit@aidl.one"
   },
-  "homepage": "https://linkit.smartgeo.tokyo",
+  "homepage": "https://linkit.aidl.one",
   "repository": "https://github.com/smartgalilei/Linkit",
   "skills": "./skills",
   "mcpServers": "./.mcp.json"
