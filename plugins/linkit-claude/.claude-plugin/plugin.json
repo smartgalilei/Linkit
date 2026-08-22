@@ -1,7 +1,7 @@
 {
   "name": "linkit",
   "displayName": "Linkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Publish complete single-file HTML pages as public Linkit URLs.",
   "icon": "./assets/Linkit_LOGO.png",
   "author": {
